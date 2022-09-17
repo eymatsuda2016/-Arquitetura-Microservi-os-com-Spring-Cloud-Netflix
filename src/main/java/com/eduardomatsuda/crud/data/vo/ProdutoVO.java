@@ -2,8 +2,6 @@ package com.eduardomatsuda.crud.data.vo;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-
 import org.modelmapper.ModelMapper;
 
 import com.eduardomatsuda.crud.entity.Produto;
@@ -24,6 +22,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
+
 public class ProdutoVO implements Serializable{
 
 	private static final long serialVersionUID = -9100241351575970876L;
@@ -39,9 +38,14 @@ public class ProdutoVO implements Serializable{
 	
 	@JsonProperty("preco")
 	private Double preco;
+
 	
 	public static ProdutoVO create(Produto produto) {
 		return new ModelMapper().map(produto, ProdutoVO.class);
+	}
+
+	public Long getId() {
+		return null;
 	}
 
 }
